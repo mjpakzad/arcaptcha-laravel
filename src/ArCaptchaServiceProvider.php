@@ -15,7 +15,7 @@ class ArCaptchaServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/arcaptcha.php',
+            __DIR__ . '/../config/arcaptcha.php',
             'arcaptcha'
         );
 
@@ -32,7 +32,7 @@ class ArCaptchaServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/arcaptcha.php' => config_path('arcaptcha.php'),
+            __DIR__ . '/../config/arcaptcha.php' => config_path('arcaptcha.php')
         ], 'config');
 
         $this->addValidationRule();
@@ -58,8 +58,8 @@ class ArCaptchaServiceProvider extends ServiceProvider
         Blade::directive('arcaptchaScript', function () {
             return '<?php echo ArCaptcha::getScript()?>';
         });
-        Blade::directive('arcaptchaWidget', function () {
-            return '<?php echo ArCaptcha::getWidget()?>';
+        Blade::directive('arcaptchaWidget', function ($options) {
+            return "<?php echo ArCaptcha::getWidget(${options})?>";
         });
     }
 }

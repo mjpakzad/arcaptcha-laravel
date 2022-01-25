@@ -1,7 +1,7 @@
 {
-    "name": "mohammadv184/arcaptcha-laravel",
+    "name": "arcaptcha/arcaptcha-laravel",
     "description": "Laravel Package for the ArCaptcha",
-    "homepage": "https://github.com/mohammadv184/arcaptcha-laravel",
+    "homepage": "https://github.com/arcaptcha/arcaptcha-laravel",
     "keywords": [
         "laravel",
         "arcaptcha",
@@ -10,7 +10,6 @@
         "laravel captcha",
         "laravel package",
         "persian-captcha"
-
     ],
     "authors": [
         {
@@ -20,7 +19,7 @@
     ],
     "require": {
         "php": ">=7.3",
-        "mohammadv184/arcaptcha": "^1.0",
+        "arcaptcha/arcaptcha-php": "^1.0",
         "laravel/framework": "^5.0|^6.0|^7.0|^8.0"
     },
     "require-dev": {
@@ -47,7 +46,7 @@
         "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
     },
     "suggest": {
-        "mohammadv184/arcaptcha" : "PHP library for ArCaptcha"
+        "mohammadv184/arcaptcha": "PHP library for ArCaptcha"
     },
     "extra": {
         "laravel": {

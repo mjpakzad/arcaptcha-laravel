@@ -2,9 +2,9 @@
 
 # Laravel ArCaptcha Package
 
-[![Latest Stable Version](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/v)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel) 
-[![Total Downloads](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/downloads)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel) 
-[![Latest Unstable Version](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/v/unstable)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel) 
+[![Latest Stable Version](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/v)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
+[![Total Downloads](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/downloads)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
+[![Latest Unstable Version](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/v/unstable)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
 [![License](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/license)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
 
 Laravel Package for the ArCaptcha
@@ -16,17 +16,17 @@ For **PHP** integration you can use [mohammadv184/arcaptcha](https://github.com/
 
 - [PHP ArCaptcha Library](#PHP-ArCaptcha-Library)
 - [List of contents](#list-of-contents)
-    - [Installation](#Installation)
-    - [Configuration](#Configuration)
-        - [Publish package](#publish-package)
-        - [Set the environment](#set-the-environment)
-        - [Customize error message](#customize-error-message)
-    - [How to use](#how-to-use)
-        - [Embed Script in Blade](#Embed-Script-in-Blade)
-        - [Form setup](#Form-setup)
-        - [Verify submitted data](#Verify-submitted-data)
-    - [Credits](#credits)
-    - [License](#license)
+  - [Installation](#Installation)
+  - [Configuration](#Configuration)
+    - [Publish package](#publish-package)
+    - [Set the environment](#set-the-environment)
+    - [Customize error message](#customize-error-message)
+  - [How to use](#how-to-use)
+    - [Embed Script in Blade](#Embed-Script-in-Blade)
+    - [Form setup](#Form-setup)
+    - [Verify submitted data](#Verify-submitted-data)
+  - [Credits](#credits)
+  - [License](#license)
 
 ## Installation
 
@@ -35,14 +35,17 @@ You can install the package via composer:
 ```bash
 composer require mohammadv184/arcaptcha-laravel
 ```
-Laravel 5.5 (or greater) uses package auto-discovery, so doesn't require you to manually add the Service Provider, but if you 
+
+Laravel 5.5 (or greater) uses package auto-discovery, so doesn't require you to manually add the Service Provider, but if you
 don't use auto-discovery ArCaptchaServiceProvider must be registered in config/app.php:
+
 ```php
 'providers' => [
     ...
     Mohammadv184\ArCaptcha\Laravel\ArCaptchaServiceProvider::class,
 ];
 ```
+
 You can use the facade for shorter code. Add ArCaptcha to your aliases:
 
 ```php
@@ -96,29 +99,35 @@ You can also use `ArCaptcha::getScript()`.
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        ...
-        @arcaptchaScript
-    </head>
+  <head>
+    ... @arcaptchaScript
+  </head>
+</html>
 ```
+
 ### Form setup
+
 After you have to insert `@arcaptchaWidget` blade directive inside the form where you want to use the field `arcaptcha-token`.
 
 You can also use `ArCaptcha::getWidget()`.
 
+_Note : You can pass widget options into getWidget function or arcaptchaWidget directive like this : @arcaptchaWidget(['lang'=>'en'])_
+
+_To see available options on widget see [here](https://docs.arcaptcha.ir/docs/configuration#arcaptcha-container-configuration)_
+
 ```html
 <form>
-    @csrf
-
-    ...
-    @arcaptchaWidget
-    <!-- OR -->
-    {!! ArCaptcha::getWidget() !!}
-    <input type="submit">
+  @csrf ... @arcaptchaWidget
+  <!-- OR -->
+  {!! ArCaptcha::getWidget() !!}
+  <input type="submit" />
 </form>
 ```
+
 ### Verify submitted data
+
 Add `arcaptcha` to your rules
+
 ```php
 $validator = Validator::make(request()->all(), [
         ...
@@ -131,6 +140,24 @@ $validator = Validator::make(request()->all(), [
         $errors = $validator->errors();
     }
 ```
+
+## Invisible mode example
+
+Just try to pass `size` and `callback` option to getWidget function. Make sure to define callback function in global scope:
+
+```html
+<form>
+  {!! ArCaptcha::getWidget([ 'size'=>'invisible','callback'=>'callback']) !!}
+  <input type="submit" />
+
+  <script>
+    function callback(token) {
+      // Challenge is solved! Just submit the form!
+    }
+  </script>
+</form>
+```
+
 ## Credits
 
 - [Mohammad Abbasi](https://github.com/mohammadv184)
