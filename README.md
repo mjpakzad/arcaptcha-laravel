@@ -2,10 +2,10 @@
 
 # Laravel ArCaptcha Package
 
-[![Latest Stable Version](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/v)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
-[![Total Downloads](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/downloads)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
-[![Latest Unstable Version](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/v/unstable)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
-[![License](http://poser.pugx.org/mohammadv184/arcaptcha-laravel/license)](https://packagist.org/packages/mohammadv184/arcaptcha-laravel)
+[![Latest Stable Version](http://poser.pugx.org/arcaptcha/arcaptcha-laravel/v)](https://packagist.org/packages/arcaptcha/arcaptcha-laravel)
+[![Total Downloads](http://poser.pugx.org/arcaptcha/arcaptcha-laravel/downloads)](https://packagist.org/packages/arcaptcha/arcaptcha-laravel) [![Latest Unstable Version](http://poser.pugx.org/arcaptcha/arcaptcha-laravel/v/unstable)](https://packagist.org/packages/arcaptcha/arcaptcha-laravel)
+[![License](http://poser.pugx.org/arcaptcha/arcaptcha-laravel/license)](https://packagist.org/packages/arcaptcha/arcaptcha-laravel)
+[![PHP Version Require](http://poser.pugx.org/arcaptcha/arcaptcha-laravel/require/php)](https://packagist.org/packages/arcaptcha/arcaptcha-laravel)
 
 Laravel Package for the ArCaptcha
 This package supports `PHP 7.3+`.
