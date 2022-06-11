@@ -107,7 +107,7 @@ You can also use `ArCaptcha::getScript()`.
 
 ### Form setup
 
-After you have to insert `@arcaptchaWidget` blade directive inside the form where you want to use the field `arcaptcha-token`.
+After you have to insert `@arcaptchaWidget` blade directive inside the form where you want to use the field `arcaptcha-response`.
 
 You can also use `ArCaptcha::getWidget()`.
 
@@ -131,7 +131,7 @@ Add `arcaptcha` to your rules
 ```php
 $validator = Validator::make(request()->all(), [
         ...
-        'arcaptcha-token' => 'arcaptcha',
+        'arcaptcha-response' => 'arcaptcha',
     ]);
 
     // check if validator fails
