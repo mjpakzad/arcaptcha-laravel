@@ -33,7 +33,7 @@ For **PHP** integration you can use [mohammadv184/arcaptcha](https://github.com/
 You can install the package via composer:
 
 ```bash
-composer require mohammadv184/arcaptcha-laravel
+composer require arcaptcha/arcaptcha-laravel
 ```
 
 Laravel 5.5 (or greater) uses package auto-discovery, so doesn't require you to manually add the Service Provider, but if you
