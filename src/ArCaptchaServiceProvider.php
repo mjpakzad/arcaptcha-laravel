@@ -46,6 +46,9 @@ class ArCaptchaServiceProvider extends ServiceProvider
     protected function addValidationRule(): void
     {
         Validator::extendImplicit('arcaptcha', function ($attribute, $value, $parameters) {
+            if(is_null($value)){
+                return false;
+            }
             return app('arcaptcha')->verify($value);
         }, trans('validation.arcaptcha'));
     }
