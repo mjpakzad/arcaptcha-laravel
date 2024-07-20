@@ -22,7 +22,11 @@ class ArCaptchaServiceProvider extends ServiceProvider
         $this->app->singleton('arcaptcha', function () {
             $config = config('arcaptcha');
 
-            return new ArCaptcha($config['site_key'], $config['secret_key']);
+            return new ArCaptcha(
+                $config['site_key'],
+                $config['secret_key'],
+                ['verify_exception_value' => $config['verify_exception_value']]
+            );
         });
     }
 
@@ -46,7 +50,7 @@ class ArCaptchaServiceProvider extends ServiceProvider
     protected function addValidationRule(): void
     {
         Validator::extendImplicit('arcaptcha', function ($attribute, $value, $parameters) {
-            if(is_null($value)){
+            if (is_null($value)) {
                 return false;
             }
             return app('arcaptcha')->verify($value);

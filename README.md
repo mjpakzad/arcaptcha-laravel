@@ -73,6 +73,10 @@ Open .env file and set `ARCAPTCHA_SITE_KEY` and `ARCAPTCHA_SECRET_KEY`:
 # in your .env file
 ARCAPTCHA_SITE_KEY=YOUR_API_SITE_KEY
 ARCAPTCHA_SECRET_KEY=YOUR_API_SECRET_KEY
+
+# Optional: Default returned value from verify function
+# when there is an Network or any other unexpected issue.
+ARCAPTCHA_VERIFY_EXCEPTION_VALUE=true
 ```
 
 ### Customize error message
